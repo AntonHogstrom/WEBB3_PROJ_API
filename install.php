@@ -55,14 +55,14 @@ $sql .= "DROP TABLE IF EXISTS website;
         CREATE TABLE website(
             website_id INT(10) AUTO_INCREMENT PRIMARY KEY,
             title VARCHAR(50) UNIQUE,
-            img VARCHAR (100) default 'pepecode',
+            img VARCHAR (100),
             website_url VARCHAR(500),
             about VARCHAR(500),
             created DATE
         );"
 ;
 
-$sql .= "INSERT INTO website(title, img, website_url, about, created) VALUES ('Devnoe', 'pepecode', 'https://www.devnoe.com/', 'My main website from where i also host sub-sites', '2020-10-13');";
+$sql .= "INSERT INTO website(title, img, website_url, about, created) VALUES ('Devnoe', 'pepecode.jpg', 'https://www.devnoe.com/', 'My main website from where i also host sub-sites', '2020-10-13');";
 
 
 

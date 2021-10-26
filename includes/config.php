@@ -22,7 +22,7 @@ if($_SERVER['SERVER_NAME'] === "localhost") {
     define("DBDATABASE", "portfolio");
 } else {
     define("DBHOST", "devnoe.com.mysql");
-    define("DBUSER", "devnoe_commiun");
-    define("DBPASS", "MIUNPassWord123Secret!");
-    define("DBDATABASE", "devnoe_commiun");
+    define("DBUSER", "devnoe_comportfolio");
+    define("DBPASS", "MinPortfolioPasswordMiun123!");
+    define("DBDATABASE", "devnoe_comportfolio");
 }

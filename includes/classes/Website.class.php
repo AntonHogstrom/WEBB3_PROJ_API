@@ -4,6 +4,7 @@ class Website {
     private $db;
     private $id;
     private $title;
+    private $img;
     private $website_url;
     private $about;
     private $created;
@@ -22,15 +23,18 @@ class Website {
 
 
     /* ADD website TO DATABASE */
-    public function addWebsite($title, $website_url, $about, $created) : bool {
+    public function addWebsite($title, $img, $website_url, $about, $created) : bool {
         $this -> title = strip_tags($title);
+        $this -> img = strip_tags($img);
         $this -> website_url = strip_tags($website_url);
         $this -> about = strip_tags($about);
         $this -> created = strip_tags($created);
 
-        $stmt = $this -> db -> prepare("INSERT INTO website (title, website_url, about, created)
-        VALUES (?, ?, ?, ?)");
-        $stmt -> bind_param("ssss", $this -> title, $this -> website_url, $this -> about, $this -> created);
+        header("'location: admin/" . $this -> img . "'");
+
+        $stmt = $this -> db -> prepare("INSERT INTO website (title, img, website_url, about, created)
+        VALUES (?, ?, ?, ?, ?)");
+        $stmt -> bind_param("sssss", $this -> title, $this -> img, $this -> website_url, $this -> about, $this -> created);
         
 
         //Execute Statement
@@ -68,16 +72,17 @@ class Website {
 
     /* UPDATE Website BY ID */
 
-    public function updateWebsite($title, $website_url, $about, $created, $id) : bool {
+    public function updateWebsite($title, $img, $website_url, $about, $created, $id) : bool {
             
         $this -> id = intval($id);
         $this -> title = strip_tags($title);
+        $this -> img = strip_tags($img);
         $this -> website_url = strip_tags($website_url);
         $this -> about = strip_tags($about);
         $this -> created = strip_tags($created);
 
-        $stmt = $this -> db -> prepare("UPDATE website SET title=?, website_url=?, about=?, created=? WHERE website_id=?;");
-        $stmt -> bind_param("sssss", $this -> title, $this -> website_url, $this -> about, $this -> created, $this-> id);
+        $stmt = $this -> db -> prepare("UPDATE website SET title=?, img=?, website_url=?, about=?, created=? WHERE website_id=?;");
+        $stmt -> bind_param("ssssss", $this -> title, $this -> img, $this -> website_url, $this -> about, $this -> created, $this-> id);
 
 
         //Execute Statement

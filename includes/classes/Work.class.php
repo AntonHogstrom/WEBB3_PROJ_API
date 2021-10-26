@@ -71,7 +71,7 @@ class Work {
     public function updateWork($company, $startDate, $endDate, $title, $id) : bool {
         
         $this -> id = intval($id);
-        $this -> work = strip_tags($company);
+        $this -> company = strip_tags($company);
         $this -> startDate = strip_tags($startDate);
         $this -> endDate = strip_tags($endDate);
         $this -> title = strip_tags($title);

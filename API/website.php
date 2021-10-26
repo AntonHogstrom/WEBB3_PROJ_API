@@ -49,12 +49,12 @@ switch($method) {
         $data = json_decode(file_get_contents("php://input"));
         
             //checks if any value is empty
-        if($data->title == "" || $data->website_url == "" || $data->about == "" || $data->created == "" ) {
-            $response = array("message" => "Please send website title, url, description and creation date");
+        if($data->title == "" || $data->img == "" || $data->website_url == "" || $data->about == "" || $data->created == "" ) {
+            $response = array("message" => "Please send website title, image-file, url, description and creation date");
 
             http_response_code(400);//error
         } else {
-            if($Website->addWebsite($data->title, $data->website_url, $data->about, $data->created)) {
+            if($Website->addWebsite($data->title, $data->img, $data->website_url, $data->about, $data->created)) {
                 $response = array("message" => "Created");
                 http_response_code(201); //Created
             } else {
@@ -74,10 +74,10 @@ switch($method) {
             } else {
                 $data = json_decode(file_get_contents("php://input"));
                 //checks if any value is empty
-                if($data->title == "" || $data->website_url == "" || $data->about == "" || $data->created == "") {
+                if($data->title == "" || $data->img == "" || $data->website_url == "" || $data->about == "" || $data->created == "") {
                     $response = array("message" => "Please send website title, url, description and creation date");
                 } else {
-                    $Website->updateWebsite($data->title, $data->website_url, $data->about, $data->created, $id);
+                    $Website->updateWebsite($data->title, $data->img, $data->website_url, $data->about, $data->created, $id);
                     http_response_code(200);
                     $response = array("message" => "Post with website ID: $id is updated");
                 }
