@@ -30,7 +30,7 @@ switch($method) {
         //Skickar en "HTTP response status code"
         http_response_code(200); //Ok - The request has succeeded
 
-        if(isset($_GET["id"])) {
+        if(isset($id)) {
             //if id in GET, get specific Website, else get all Websites
             $response = $Website -> getWebsite($id);
         } else {

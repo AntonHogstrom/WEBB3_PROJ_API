@@ -12,8 +12,6 @@ spl_autoload_register(function($class_name) {
     include 'classes/' . $class_name . '.class.php';
 });
 
-session_start();
-
 //defines database connection depending on if localhost or not
 if($_SERVER['SERVER_NAME'] === "localhost") {
     define("DBHOST", "localhost");

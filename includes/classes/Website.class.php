@@ -30,8 +30,6 @@ class Website {
         $this -> about = strip_tags($about);
         $this -> created = strip_tags($created);
 
-        header("'location: admin/" . $this -> img . "'");
-
         $stmt = $this -> db -> prepare("INSERT INTO website (title, img, website_url, about, created)
         VALUES (?, ?, ?, ?, ?)");
         $stmt -> bind_param("sssss", $this -> title, $this -> img, $this -> website_url, $this -> about, $this -> created);

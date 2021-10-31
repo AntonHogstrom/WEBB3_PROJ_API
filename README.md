@@ -32,4 +32,14 @@ Takes id parameter for specific row
 Sends request to database
 
 
+---
+
+Database tables can be installed through install file within API files. This should not be uploaded publicly
+For installation of working environment, use "npm install" inside of project terminal.
+Then use terminal command "gulp" to start the automation process.
+A webserver will be needed to run (XAMPP for example)
+Files should be downloaded to htdocs inside of xampp folder.
+For custom database connection, edit inside of config.php
+
+
 _ Anton Högström _
