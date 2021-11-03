@@ -42,4 +42,4 @@ Files should be downloaded to htdocs inside of xampp folder.
 For custom database connection, edit inside of config.php
 
 
-_ Anton Högström _
+**Anton Högström**
