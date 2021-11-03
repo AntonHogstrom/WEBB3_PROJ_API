@@ -71,12 +71,12 @@ $sql .= "DROP TABLE IF EXISTS user;
         CREATE TABLE user(
             user_id INT(16) AUTO_INCREMENT PRIMARY KEY,
             username VARCHAR(70) UNIQUE,
-            password VARCHAR(100),
+            password VARCHAR(255),
             created TIMESTAMP
         );"
 ;
 
-$sql .= "INSERT INTO user(username, password) VALUES ('MIUNadmin', 'Mittuniversitetet123!');";
+$sql .= "INSERT INTO user(username, password) VALUES ('MIUNadmin', '$2y$10$6U1fNboyVwZbIwN2RCdeYevkQjiq6tmlbIg/pcq7jx5tZ89.2ZCoy');";
 
 
 
